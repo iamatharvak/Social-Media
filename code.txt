@@ -1,0 +1,31 @@
+<ul style={{ listStyle: "none", padding: 0 }}>
+          <li
+            style={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => navigate("/connections")}
+          >
+            Connections
+          </li>
+          <li
+            style={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => navigate("/settings")}
+          >
+            Settings
+          </li>
+          <li
+            style={{ marginBottom: "10px", cursor: "pointer" }}
+            onClick={() => alert("Logging out ...")}
+          >
+            LogOut
+          </li>
+        </ul>
+
+         {/* <div className="sidebar">
+        <div className="searchbar">
+          <input
+            type="text"
+            placeholder="Search Friends"
+            className="searchInput"
+          />
+        </div>
+        
+      </div> */}
