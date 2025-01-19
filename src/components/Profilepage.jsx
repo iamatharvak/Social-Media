@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { profiles } from "./data/profile";
 import "./styles/Profile.css";
+import LocationMap from "./LocationMap";
 
 function ProfilePage() {
   const { id } = useParams();
@@ -44,6 +45,7 @@ function ProfilePage() {
           </span>
         ))}
       </div>
+      <LocationMap coordinates={profile.coordinates} name={profile.name} />
       <div className="profile-actions">
         <button>Edit Profile</button>
         <button>Send Message</button>

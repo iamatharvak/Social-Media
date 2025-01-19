@@ -1,3 +1,7 @@
+import image from "../images/1.jpg";
+import image1 from "../images/abc.jpeg";
+import image2 from "../images/xyz.jpeg";
+import image3 from "../images/srk.jpeg";
 export const profiles = [
   {
     id: 1,
@@ -5,9 +9,10 @@ export const profiles = [
     age: 25,
     location: "New York, USA",
     description: "Love outdoor adventures and photography. Let's connect!",
-    photo: "john_photo_url",
-    gallery: ["image1_url", "image2_url", "image3_url"],
+    photo: image,
+    gallery: [image1, image2, image3],
     interests: ["Hiking", "Photography", "Music"],
+    coordinates: { lat: 18.506048, lng: 73.804943 },
   },
   {
     id: 2,
