@@ -20,7 +20,7 @@ function LocationMap({ coordinates, name }) {
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={[coordinates.lat, coordinates.lng]}>
         <Popup>{name}'s location</Popup>

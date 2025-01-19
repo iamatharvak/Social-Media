@@ -11,6 +11,7 @@ import Settings from "./components/Settings";
 import "./App.css";
 import Layout from "./components/Layout";
 import ProfilePage from "./components/Profilepage";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/connections" element={<Connections />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={<AdminDashboard />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
         </Route>
       </Routes>
