@@ -2,8 +2,27 @@
     height: 300px;
     width: 100%;
     margin-top: 20px;
-}
-.leaflet-container {
+    
+
+    
+  }
+  
+  .leaflet-container {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
   }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .map-container {
+      height: 250px; /* Adjust height for smaller devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .map-container {
+      height: 200px; /* Further adjust height for mobile screens */
+    }
+  }
+  
