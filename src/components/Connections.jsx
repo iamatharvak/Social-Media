@@ -4,8 +4,18 @@ import "./styles/connections.css";
 
 function Connections() {
   const [connectedprofile, setConnectedProfile] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showPrompt, setShowPrompt] = useState(false);
 
-  const handleConnect = (profileId) => {};
+  const handleConnect = (profileId) => {
+    if (!isLoggedIn) {
+      setShowPrompt(true);
+      return;
+    }
+    if (!connectedprofile.includes(profileId)) {
+      setConnectedProfile((prev) => [...prev, profileId]);
+    }
+  };
   return (
     <div className="container">
       <h1 className="title">Connections</h1>

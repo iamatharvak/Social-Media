@@ -41,7 +41,7 @@ function HomeScreen() {
             </div>
           ))
         ) : (
-          <p>Start Searching</p>
+          <p>Start Connecting</p>
         )}
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AddEditProfileForm from "./AddEditprofileForm";
-import { profiles } from "./data/profile";
 import "./styles/Admin.css";
 
 function AdminDashboard() {
@@ -11,10 +10,7 @@ function AdminDashboard() {
       age: 25,
       location: "New York, USA",
       description: "Love outdoor adventures and photography. Let's connect!",
-      // photo: image,
-      // gallery: [image1, image2, image3],
       interests: ["Hiking", "Photography", "Music"],
-      coordinates: { lat: 18.506048, lng: 73.804943 },
     },
     {
       id: 2,
@@ -22,42 +18,58 @@ function AdminDashboard() {
       age: 24,
       location: "Los Angeles, USA",
       description: "Fitness enthusiast, book lover, and foodie.",
-      photo: "jane_photo_url",
-      gallery: ["image4_url", "image5_url", "image6_url"],
       interests: ["Fitness", "Books", "Food"],
-      coordinates: { lat: 18.506048, lng: 73.804943 }
     },
   ]);
-  const [editingProfile, setEditingProfile] = useState(null);
-  const [showform, setShowForm] = useState(false);
 
-  const handleSave = (profile) => {
-    if (profile.id) {
+  const [editingProfile, setEditingProfile] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false); // Simulating login state
+  const [showModal, setShowModal] = useState(false); // For "Please Log In" message
+
+  const handleSave = (updatedProfile) => {
+    if (!loggedIn) {
+      setShowModal(true); // Show login prompt
+      return;
+    }
+
+    if (updatedProfile.id) {
+      // Edit existing profile
       setProfile((prev) =>
-        prev.map((p) => (p.id === profile.id ? profile : p))
+        prev.map((p) => (p.id === updatedProfile.id ? updatedProfile : p))
       );
     } else {
-      setProfile((prev) => [...prev, { ...profile, id: Date.now() }]);
+      // Add new profile
+      setProfile((prev) => [...prev, { ...updatedProfile, id: Date.now() }]);
     }
     setShowForm(false);
   };
 
   const handleDelete = (id) => {
+    if (!loggedIn) {
+      setShowModal(true); 
+      return;
+    }
     setProfile((prev) => prev.filter((p) => p.id !== id));
   };
 
   return (
-    <div>
+    <div className="admin-dashboard">
       <h1>Admin Dashboard</h1>
       <button
+        className="add-button"
         onClick={() => {
+          if (!loggedIn) {
+            setShowModal(true); 
+            return;
+          }
           setEditingProfile(null);
           setShowForm(true);
         }}
       >
         Add Profile
       </button>
-      <table>
+      <table className="profile-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -68,35 +80,58 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {profiles.map((profile) => (
-            <tr key={profile.id}>
-              <td>{profile.name}</td>
-              <td>{profile.age}</td>
-              <td>{profile.location}</td>
-              <td>{profile.description}</td>
+          {profile.map((p) => (
+            <tr key={p.id}>
+              <td>{p.name}</td>
+              <td>{p.age}</td>
+              <td>{p.location}</td>
+              <td>{p.description}</td>
               <td>
                 <button
+                  className="edit-button"
                   onClick={() => {
-                    setEditingProfile(profile);
+                    if (!loggedIn) {
+                      setShowModal(true); 
+                      return;
+                    }
+                    setEditingProfile(p);
                     setShowForm(true);
                   }}
                 >
                   Edit
                 </button>
-                <button onClick={() => handleDelete(profile.id)}>Delete</button>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDelete(p.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {showform && (
+      {showForm && (
         <AddEditProfileForm
           profile={editingProfile}
           onSave={handleSave}
           onCancel={() => setShowForm(false)}
         />
       )}
+     
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Please Log In</h2>
+            <p>You must be logged in to perform this action.</p>
+            <button className="modal-close" onClick={() => setShowModal(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 export default AdminDashboard;
