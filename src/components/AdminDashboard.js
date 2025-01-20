@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddEditProfileForm from "./AddEditprofileForm";
 import { profiles } from "./data/profile";
+import "./styles/Admin.css";
 
 function AdminDashboard() {
   const [profile, setProfile] = useState([
@@ -24,6 +25,7 @@ function AdminDashboard() {
       photo: "jane_photo_url",
       gallery: ["image4_url", "image5_url", "image6_url"],
       interests: ["Fitness", "Books", "Food"],
+      coordinates: { lat: 18.506048, lng: 73.804943 }
     },
   ]);
   const [editingProfile, setEditingProfile] = useState(null);

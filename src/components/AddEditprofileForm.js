@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { profiles } from "./data/profile";
+
 
 function AddEditProfileForm({ profile, onSave, onCancel }) {
   const [formData, setFormData] = useState({

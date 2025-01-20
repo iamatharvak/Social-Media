@@ -12,6 +12,7 @@ import "./App.css";
 import Layout from "./components/Layout";
 import ProfilePage from "./components/Profilepage";
 import AdminDashboard from "./components/AdminDashboard";
+import Login from "./components/login";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/connections" element={<Connections />} />
           <Route path="/settings" element={<AdminDashboard />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </Router>

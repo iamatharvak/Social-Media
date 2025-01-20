@@ -24,8 +24,8 @@ function Sidebar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/logout" activeClassName="active-link">
-              Logout
+            <NavLink to="/login" activeClassName="active-link">
+              Login
             </NavLink>
           </li>
         </ul>

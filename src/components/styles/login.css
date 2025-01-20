@@ -1,0 +1,133 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+
+  .login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+ 
+  .login-card h1 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .login-card p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+ 
+  .login-buttons {
+    margin: 20px 0;
+  }
+  
+  .login-option {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-option:hover {
+    background: #0056b3;
+  }
+  
+ 
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .login-submit {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .login-submit:hover {
+    background: #0056b3;
+  }
+  
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+ 
+  .social-login {
+    margin-top: 20px;
+  }
+  
+  .social-login p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons i {
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons i:hover {
+    color: #0056b3;
+  }
+ 
+  .login-option.active {
+    background: #0056b3;
+    color: #fff;
+    border: 2px solid #004085;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add transition for smooth highlighting */
+  .login-option {
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .login-card {
+      padding: 20px;
+    }
+  }
+  
