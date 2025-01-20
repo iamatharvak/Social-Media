@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>Menu</h2>
+      <h2>Connect</h2>
       <nav>
         <ul>
           <li>

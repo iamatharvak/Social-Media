@@ -1,213 +1,337 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #007bff;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 25%;
+}
+
+/* Table styles */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  th,
-  td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Button styles */
-  button {
-    margin-right: 5px;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
-  button:active {
-    transform: scale(0.98);
-  }
-  
-  /* Specific button styles */
-  button:first-child {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  button:first-child:hover {
-    background-color: #0056b3;
-  }
-  
-  button:last-child {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  button:last-child:hover {
-    background-color: #c82333;
-  }
-  
-  /* Add Profile button */
-  button:nth-child(1) {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  button:nth-child(1):hover {
-    background-color: #218838;
-  }
-  
-  /* Form container */
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  form label {
-    font-weight: bold;
-  }
-  
-  form input,
-  form textarea {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  form input:focus,
-  form textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  form button {
-    align-self: flex-start;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button styles */
+button {
+  margin-right: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+button:first-child:hover {
+  background-color: #0056b3;
+}
+
+button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:last-child:hover {
+  background-color: #c82333;
+}
+
+button:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+}
+
+button:nth-child(1):hover {
+  background-color: #218838;
+}
+
+/* Form container */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+form button {
+  align-self: flex-start;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Profile table */
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.profile-table th,
+.profile-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.profile-table th {
+  background-color: #f4f4f4;
+}
+
+/* Edit & delete buttons */
+.edit-button,
+.delete-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal p {
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: #0056b3;
+}
+
+/* Admin Dashboard with Sidebar */
+.admin-dashboard {
+  margin-left: 22%; /* Adjust for sidebar */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small devices (phones) */
+@media (max-width: 480px) {
   .admin-dashboard {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .add-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .add-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .profile-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  .profile-table th,
-  .profile-table td {
-    border: 1px solid #ddd;
+    margin-left: 0; /* Remove left margin */
     padding: 10px;
-    text-align: left;
   }
-  
-  .profile-table th {
-    background-color: #f4f4f4;
+
+  .profile-table,
+  table {
+    font-size: 12px; /* Smaller font size */
   }
-  
-  .edit-button,
-  .delete-button {
-    padding: 5px 10px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+
+  button {
+    font-size: 12px; /* Smaller button size */
+    padding: 6px 10px;
   }
-  
-  .edit-button {
-    background-color: #28a745;
-    color: white;
+
+  .add-button {
+    padding: 8px 12px; /* Smaller padding */
   }
-  
-  .edit-button:hover {
-    background-color: #218838;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
-  
-  /* Modal Styling */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
+
   .modal {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Full-width modal on small screens */
   }
-  
-  .modal h2 {
-    margin-bottom: 10px;
+
+  h1 {
+    font-size: 24px; /* Smaller header font */
   }
-  
-  .modal p {
-    margin-bottom: 20px;
+  .content{
+    overflow: scroll;
+    margin-left: 25%;
   }
-  
-  .modal-close {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
+}
+
+/* For medium devices (tablets) */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    margin-left: 0; /* Remove left margin */
+    padding: 10px;
   }
-  
-  .modal-close:hover {
-    background-color: #0056b3;
+
+  .profile-table,
+  table {
+    font-size: 14px; /* Smaller font size */
   }
-  
+  .content{
+    overflow: scroll;
+    margin-left: 25%;
+  }
+
+  button {
+    font-size: 14px; /* Adjust button size */
+    padding: 8px 12px;
+  }
+
+  .add-button {
+    padding: 10px 14px;
+  }
+
+  .modal {
+    width: 80%; /* Modal slightly smaller */
+  }
+
+  h1 {
+    font-size: 28px; /* Adjust header font */
+  }
+}
+
+/* For large devices (desktops) */
+@media (min-width: 1024px) {
+  .admin-dashboard {
+    margin-left: 22%; /* Sidebar still visible */
+  }
+
+  .profile-table,
+  table {
+    font-size: 16px; /* Default font size */
+  }
+
+  button {
+    font-size: 16px; /* Default button size */
+    padding: 10px 14px;
+  }
+
+  .add-button {
+    padding: 12px 16px;
+  }
+
+  .modal {
+    width: 400px; /* Default modal size */
+  }
+
+  h1 {
+    font-size: 32px; /* Default header font */
+  }
+}
