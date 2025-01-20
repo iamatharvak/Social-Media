@@ -58,5 +58,4 @@ Profile Import/Export: Allow admins to import/export profile data.
 Localization: Support multiple languages for a global audience.
 Learn More
 React Documentation
-Google Maps API Documentation
-Mapbox Documentation
+
