@@ -24,30 +24,30 @@ function AdminDashboard() {
 
   const [editingProfile, setEditingProfile] = useState(null);
   const [showForm, setShowForm] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false); // Simulating login state
-  const [showModal, setShowModal] = useState(false); // For "Please Log In" message
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSave = (updatedProfile) => {
     if (!loggedIn) {
-      setShowModal(true); // Show login prompt
+      setShowModal(true);
       return;
     }
 
-    if (updatedProfile.id) {
-      // Edit existing profile
-      setProfile((prev) =>
-        prev.map((p) => (p.id === updatedProfile.id ? updatedProfile : p))
-      );
-    } else {
-      // Add new profile
-      setProfile((prev) => [...prev, { ...updatedProfile, id: Date.now() }]);
-    }
-    setShowForm(false);
+    // if (updatedProfile.id) {
+
+    //   setProfile((prev) =>
+    //     prev.map((p) => (p.id === updatedProfile.id ? updatedProfile : p))
+    //   );
+    // } else {
+
+    //   setProfile((prev) => [...prev, { ...updatedProfile, id: Date.now() }]);
+    // }
+    // setShowForm(false);
   };
 
   const handleDelete = (id) => {
     if (!loggedIn) {
-      setShowModal(true); 
+      setShowModal(true);
       return;
     }
     setProfile((prev) => prev.filter((p) => p.id !== id));
@@ -60,7 +60,7 @@ function AdminDashboard() {
         className="add-button"
         onClick={() => {
           if (!loggedIn) {
-            setShowModal(true); 
+            setShowModal(true);
             return;
           }
           setEditingProfile(null);
@@ -91,7 +91,7 @@ function AdminDashboard() {
                   className="edit-button"
                   onClick={() => {
                     if (!loggedIn) {
-                      setShowModal(true); 
+                      setShowModal(true);
                       return;
                     }
                     setEditingProfile(p);
@@ -118,7 +118,7 @@ function AdminDashboard() {
           onCancel={() => setShowForm(false)}
         />
       )}
-     
+
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">

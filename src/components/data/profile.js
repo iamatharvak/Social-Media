@@ -5,9 +5,9 @@ import image3 from "../images/srk.jpeg";
 export const profiles = [
   {
     id: 1,
-    name: "John Doe",
-    age: 25,
-    location: "New York, USA",
+    name: "Atharva Kulkarni",
+    age: 21,
+    location: "Pune,India",
     description: "Love outdoor adventures and photography. Let's connect!",
     photo: image,
     gallery: [image1, image2, image3],

@@ -5,11 +5,11 @@ import "./styles/connections.css";
 function Connections() {
   const [connectedprofile, setConnectedProfile] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleConnect = (profileId) => {
     if (!isLoggedIn) {
-      setShowPrompt(true);
+      setShowModal(true);
       return;
     }
     if (!connectedprofile.includes(profileId)) {
@@ -45,6 +45,17 @@ function Connections() {
           </div>
         ))}
       </div>
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Please Log In</h2>
+            <p>You must be logged in to perform this action.</p>
+            <button className="modal-close" onClick={() => setShowModal(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

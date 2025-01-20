@@ -37,6 +37,7 @@ function ProfilePage() {
             className="gallery-image"
           />
         ))}
+        {console.log(profiles)}
       </div>
       <div className="profile-interests">
         {profile.interests.map((interest, index) => (
