@@ -13,7 +13,7 @@
     
   }
   
-  /* Responsive Design */
+  
   @media (max-width: 768px) {
     .map-container {
       height: 250px; /* Adjust height for smaller devices */

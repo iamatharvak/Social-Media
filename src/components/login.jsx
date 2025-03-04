@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/login.css";
 
 function Login() {
-  const [selectedRole, setSelectedRole] = useState(""); // State for selected role
+  const [selectedRole, setSelectedRole] = useState(""); 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

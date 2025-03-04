@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/settings" element={<AdminDashboard />} />
